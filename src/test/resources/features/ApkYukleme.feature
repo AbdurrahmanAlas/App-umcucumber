@@ -3,5 +3,5 @@ Feature: Apk yukleme
   @apk
   Scenario: Kullanici gerekli path degerlini girerek apk yukleme islemi gerceklestirir
 
-    Given Kullanici gerekli path degerlini girerek apk yukleme "calculator" islemi gerceklestirir
+    Given Kullanici gerekli path degerlini girerek apk yukleme "arabam" islemi gerceklestirir
 

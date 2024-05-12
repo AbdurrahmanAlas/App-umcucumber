@@ -2,13 +2,13 @@
 
 Feature: US_01 ARABAM COM İLANLAR > YAYINDAKI ILANLAR  MODULUNDE ISLEMLER
 
-  @alas
+
  Scenario: TC_0101 Kullanici Arabam com apksına girerek siteye giris yapar ve ilanlar > Yayındaki ilanlar > fiyat degisimini sorunsuz dogrulama yapar
 
    Given kullanıcı kurulumları tamamlar
    * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
    *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
-   * "mailArabam" ve "sifreArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+   * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
    * "Panelim" e tiklayin
    * "İlanlar" a tikla
    * "Yayındakiler" butonuna tikla
