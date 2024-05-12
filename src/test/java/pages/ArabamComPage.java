@@ -36,12 +36,21 @@ public class ArabamComPage {
     public MobileElement onkaputdegisen;
 
 
+
+    @FindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[1]")
+    public MobileElement ilanbasligi;
     @FindBy(id = "com.dogan.arabam:id/iv_B0801")
     public MobileElement solkapidegisen;
 
 
-    @FindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[1]")
-    public MobileElement ilanbaslıgı;
+    @FindBy(xpath = "//*[@text=\"Düzenle ve Yayınla\"]")
+    public MobileElement duzenlebuttongorundumu;
+
+    @FindBy(xpath = "//*[@text=\"Tamam\"]")
+    public MobileElement tamamButton;
+
+    @FindBy(xpath = "//*[@text=\"Tramer Yok\"]")
+    public MobileElement tramerYokGorundumu;
 
     @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[10]")
     public MobileElement kasaTipi;
@@ -60,6 +69,22 @@ public class ArabamComPage {
 
     @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[20]")
     public MobileElement aracdurumu;
+
+
+    @FindBy(id = "com.dogan.arabam:id/etPhone")
+    public MobileElement telefonNo;
+
+
+    @FindBy(id = "com.dogan.arabam:id/tvPhoneOptionSelected")
+    public MobileElement iletisimTelefon;
+
+
+    @FindBy(xpath = "//android.widget.TextView[@resource-id=\"com.dogan.arabam:id/tvLocationSelected\"]")
+    public MobileElement il_ilce_adres;
+    @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[2]")
+    public MobileElement kalınYaziSatinAl;
+
+
 
 
 
