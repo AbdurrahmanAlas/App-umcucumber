@@ -1,7 +1,10 @@
 package stepDefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.ArabamComPage;
 import utils.ConfigReader;
 import utils.Driver;
@@ -169,6 +172,14 @@ public class ArabamcomStepdefinitions {
         ResuableMethods.wait(5);
         arabamComPage.aciklamaSil.sendKeys(" 2007 MODEL 1.9 TDI 358 BİN KM 435 BİN TL PAZARLIK PAYI VARDIR.");
 
+        Faker faker = new Faker();
+        Actions actions = new Actions(Driver.getAndroidDriver());
+        actions.click(arabamComPage.aciklamaSil).
+                sendKeys(faker.address().fullAddress())
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.ENTER).perform();
+
+
         ResuableMethods.scrollWithUiScrollable("Tamam");
         ResuableMethods.wait(2);
 
@@ -284,5 +295,59 @@ public class ArabamcomStepdefinitions {
 
     }
 
+    @Given("{string} ya tikla")
+    public void ya_tikla(String duzenle_yayinla) {
+
+        ResuableMethods.scrollWithUiScrollable(duzenle_yayinla);
+
+
+    }
+    @Given("{string} butonuna tiklaa")
+    public void butonuna_tiklaa(String yayında_olmayanlar) {
+
+        ResuableMethods.scrollWithUiScrollable(yayında_olmayanlar);
+        ResuableMethods.wait(2);
+
+    }
+
+    @Given("Yayinda Olmayanlar {string} na tikla ve ilan detaylarını gir dogru girildigini dogrula")
+    public void yayinda_olmayanlar_na_tikla_ve_ilan_detaylarını_gir_dogru_girildigini_dogrula(String ilandetaylari) {
+
+
+        ResuableMethods.scrollWithUiScrollable(ilandetaylari);
+        //Sahibinden Mercedes - Benz Travego 15 SHD
+
+  arabamComPage.ilanbasligi.clear();
+  arabamComPage.ilanbasligi.sendKeys("Sahibinden Mercedes - Benz Travego 15 SHD");
+
+  arabamComPage.fiyatInput.clear();
+  arabamComPage.fiyatInput.sendKeys("4.200.000");
+
+  arabamComPage.yıl.clear();
+  arabamComPage.yıl.sendKeys("2011");
+
+  arabamComPage.km.clear();
+  arabamComPage.km.sendKeys("280.000");
+
+  arabamComPage.vitestipi.clear();
+  arabamComPage.vitestipi.sendKeys("Düz");
+
+  arabamComPage.vitesSayisi.clear();
+  arabamComPage.vitesSayisi.sendKeys("6+1");
+
+arabamComPage.yakitlitre.clear();
+arabamComPage.yakitlitre.sendKeys("550");
+
+arabamComPage.renk.clear();
+arabamComPage.renk.sendKeys("Beyaz");
+
+
+
+
+
+
+
+
+    }
 
 }

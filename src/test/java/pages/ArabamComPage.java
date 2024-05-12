@@ -87,6 +87,21 @@ public class ArabamComPage {
 
 
 
+    @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[8]")
+    public MobileElement yıl;
+
+
+    @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[12]")
+    public MobileElement vitestipi;
+
+
+    @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[14]")
+    public MobileElement vitesSayisi;
+
+    @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[16]")
+    public MobileElement yakitlitre;
+
+
 
 
     @FindBy(id = "com.dogan.arabam:id/etPriceValue")
