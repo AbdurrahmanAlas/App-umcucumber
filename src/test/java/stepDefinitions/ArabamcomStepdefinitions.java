@@ -262,5 +262,27 @@ public class ArabamcomStepdefinitions {
 
     }
 
+    @Given("Yayından kaldır linkine tıkla ve silme sebebini tıkla ve dogrulama yap")
+    public void yayından_kaldır_linkine_tıkla_ve_silme_sebebini_tıkla_ve_dogrulama_yap() {
+
+
+        ResuableMethods.scrollWithUiScrollable("Kalıcı Olarak Sil");
+        ResuableMethods.scrollWithUiScrollable("Takas ettim.");
+
+        Driver.getAndroidDriver().navigate().back();
+
+    }
+
+    @Given("{string} butonuna tikla ve geri geldigini dogrula")
+    public void butonuna_tikla_ve_geri_geldigini_dogrula(String vazgec) {
+
+        ResuableMethods.scrollWithUiScrollable(vazgec);
+
+        Assert.assertTrue(arabamComPage.ucNokta.isDisplayed());
+
+
+
+    }
+
 
 }

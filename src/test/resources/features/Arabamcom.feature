@@ -62,7 +62,7 @@ Feature: US_01 ARABAM COM İLANLAR > YAYINDAKI ILANLAR  MODULUNDE ISLEMLER
       * "Düzenle" e tikla
       * * İletisim sayfasına  gir bilgileri gir ve dogrula
 
-  @alas
+
   Scenario: TC_0105 Arabamcom sitesinde gerekli bilgileri girerek aracın Ilanlar>Yayindaki ilanlar> Düzenle kısmında aracın İletisim bilgilerine tıklar  detay girer ve dogrulama yapar
 
     Given kullanıcı kurulumları tamamlar
@@ -76,3 +76,27 @@ Feature: US_01 ARABAM COM İLANLAR > YAYINDAKI ILANLAR  MODULUNDE ISLEMLER
     * "Turbo Al" butonuna tıkla ve Acil satılık durumunu satın al ve dogrula
 
 
+
+  Scenario: TC_0106 Arabamcom sitesinde gerekli bilgileri girerek aracın Ilanlar>Yayindaki ilanlar> Kalıcı olarak sil ve Yayından kaldır linklerinde ayrı ayrı dogrulama yapar
+
+    Given kullanıcı kurulumları tamamlar
+    * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
+    *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
+    * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+    * "Panelim" e tiklayin
+    * "İlanlar" a tikla
+    * "Yayındakiler" butonuna tikla
+    * Üc noktaya tikla
+    *  Yayından kaldır linkine tıkla ve silme sebebini tıkla ve dogrulama yap
+
+  @alas
+  Scenario: TC_0107 Arabamcom sitesinde gerekli bilgileri girerek aracın Ilanlar>Yayindaki ilanlar> Paylaş >Vazgeç butonuna tıkla ve  dogrulama yapar
+    Given kullanıcı kurulumları tamamlar
+    * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
+    *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
+    * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+    * "Panelim" e tiklayin
+    * "İlanlar" a tikla
+    * "Yayındakiler" butonuna tikla
+    * Üc noktaya tikla
+    * "Vazgeç" butonuna tikla ve geri geldigini dogrula
