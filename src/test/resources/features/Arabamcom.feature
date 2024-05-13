@@ -102,7 +102,7 @@ Feature: US_01 ARABAM COM İLANLAR > YAYINDAKI ILANLAR  MODULUNDE ISLEMLER
     * "Vazgeç" butonuna tikla ve geri geldigini dogrula
 
 
-  @alas
+
   Scenario: TC_0108 Arabamcom sitesinde gerekli bilgileri girerek aracın Ilanlar>YAYINDA OLMAYAN ILANLAR> Uc nokta> Düzenle ve yayınla >Ilan detayları butonuna tıkla ve  dogrulama yapar
 
     Given kullanıcı kurulumları tamamlar
@@ -115,3 +115,16 @@ Feature: US_01 ARABAM COM İLANLAR > YAYINDAKI ILANLAR  MODULUNDE ISLEMLER
     * Üc noktaya tikla
     * "Düzenle ve Yayınla" ya tikla
     * Yayinda Olmayanlar "İlan Detayları" na tikla ve ilan detaylarını gir dogru girildigini dogrula
+
+  @alas
+    Scenario: TC_0109  Ilan fotografları linkine tıkla ve son resmi sil ve silindigini dogrula
+
+      Given kullanıcı kurulumları tamamlar
+      * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
+      *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
+      * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+      * "Panelim" e tiklayin
+      * "İlanlar" a tikla
+      * ikinci Üc noktaya tikla
+     * "Düzenle" e tikla
+      * Ilan fotografları linkine tıkla ve son resmi sil ve silindigini dogrula

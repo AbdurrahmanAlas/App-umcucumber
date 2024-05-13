@@ -12,7 +12,7 @@ import utils.ResuableMethods;
 
 public class ArabamcomStepdefinitions {
 
-    ArabamComPage arabamComPage=new ArabamComPage();
+    ArabamComPage arabamComPage = new ArabamComPage();
 
     @Given("Ana Ekranda bulunan {string} a tiklayin ve ardindan Giris yapı ulasın")
     public void ana_ekranda_bulunan_a_tiklayin_ve_ardindan_giris_yapı_ulasın(String panelim) {
@@ -21,11 +21,13 @@ public class ArabamcomStepdefinitions {
 
 
     }
+
     @Given("{string} a tiklayin ve ardindan login sayfasina ulasin")
     public void a_tiklayin_ve_ardindan_login_sayfasina_ulasin(String girisYap) {
 
         ResuableMethods.scrollWithUiScrollable(girisYap);
     }
+
     @Given("{string} ve {string} bilgilerini  girerek kullanici bilgileriyle {string} a tikla")
     public void ve_bilgilerini_girerek_kullanici_bilgileriyle_a_tikla(String mail, String password, String girisYap) {
 
@@ -35,35 +37,42 @@ public class ArabamcomStepdefinitions {
         arabamComPage.GırısYap.click();
 
     }
+
     @Given("{string} e tiklayin")
     public void e_tiklayin(String panelim) {
 
         ResuableMethods.scrollWithUiScrollable(panelim);
 
     }
+
     @Given("{string} a tikla")
     public void a_tikla(String ilanlar) {
 
         ResuableMethods.scrollWithUiScrollable(ilanlar);
+        ResuableMethods.wait(3);
 
     }
+
     @Given("{string} butonuna tikla")
     public void butonuna_tikla(String yayındakiler) {
 
         ResuableMethods.scrollWithUiScrollable(yayındakiler);
 
     }
+
     @Given("Üc noktaya tikla")
     public void üc_noktaya_tikla() {
 
         arabamComPage.ucNokta.click();
     }
+
     @Given("{string} e tikla")
     public void e_tikla(String fiyatdegistir) {
 
         ResuableMethods.scrollWithUiScrollable(fiyatdegistir);
 
     }
+
     @Given("Araç fiyatının sorunsuz şekilde degiştigini dogrula")
     public void araç_fiyatının_sorunsuz_şekilde_degiştigini_dogrula() {
 
@@ -87,6 +96,7 @@ public class ArabamcomStepdefinitions {
         ResuableMethods.scrollWithUiScrollable(boya_degısen);
 
     }
+
     @Given("Aracın tramer bilgisine tıkla ve tramer kaydı olup olmadıgını belirle ve dogrula")
     public void aracın_tramer_bilgisine_tıkla_ve_tramer_kaydı_olup_olmadıgını_belirle_ve_dogrula() {
 
@@ -96,18 +106,17 @@ public class ArabamcomStepdefinitions {
         ResuableMethods.scrollWithUiScrollable("Tramer");
         ResuableMethods.scrollWithUiScrollable("Tramer Yok");
         ResuableMethods.wait(1);
-       ResuableMethods.scrollWithUiScrollable("Tamam");
-       ResuableMethods.wait(1);
+        ResuableMethods.scrollWithUiScrollable("Tamam");
+        ResuableMethods.wait(1);
 
     }
+
     @Given("Aracın boya-tramer bilgisinin degistigini dogrula")
     public void aracın_boya_tramer_bilgisinin_degistigini_dogrula() {
 
 // "Tamam" metninin ekranın görünür olduğunu doğrula
         Assert.assertTrue(arabamComPage.tramerYokGorundumu.isDisplayed());
         Assert.assertTrue(arabamComPage.tamamButton.isDisplayed());
-
-
 
 
     }
@@ -184,8 +193,6 @@ public class ArabamcomStepdefinitions {
         ResuableMethods.wait(2);
 
 
-
-
 // Renk seçeneğinin doğru seçildiğini doğrulama
         String expectedRenk = "Gri (Gümüş)";
         String actualRenk = arabamComPage.renk.getText();
@@ -212,12 +219,10 @@ public class ArabamcomStepdefinitions {
         Assert.assertEquals(expectedAracDurumu, actualAracDurumu);
 
 
-
         ResuableMethods.scrollWithUiScrollable("Tamam");
         ResuableMethods.wait(1);
         ResuableMethods.scrollWithUiScrollable("DEVAM ET");
         ResuableMethods.wait(1);
-
 
 
     }
@@ -253,8 +258,8 @@ public class ArabamcomStepdefinitions {
 
         Assert.assertTrue(arabamComPage.telefonNo.isDisplayed());
 
-        String expectedKelime="Kayseri / Kocasinan / Zümrüt Mahallesi";
-        String actualKelime =arabamComPage.il_ilce_adres.getText();
+        String expectedKelime = "Kayseri / Kocasinan / Zümrüt Mahallesi";
+        String actualKelime = arabamComPage.il_ilce_adres.getText();
 
         Assert.assertTrue(actualKelime.contains(expectedKelime));
 
@@ -292,7 +297,6 @@ public class ArabamcomStepdefinitions {
         Assert.assertTrue(arabamComPage.ucNokta.isDisplayed());
 
 
-
     }
 
     @Given("{string} ya tikla")
@@ -302,6 +306,7 @@ public class ArabamcomStepdefinitions {
 
 
     }
+
     @Given("{string} butonuna tiklaa")
     public void butonuna_tiklaa(String yayında_olmayanlar) {
 
@@ -317,37 +322,42 @@ public class ArabamcomStepdefinitions {
         ResuableMethods.scrollWithUiScrollable(ilandetaylari);
         //Sahibinden Mercedes - Benz Travego 15 SHD
 
-  arabamComPage.ilanbasligi.clear();
-  arabamComPage.ilanbasligi.sendKeys("Sahibinden Mercedes - Benz Travego 15 SHD");
+        arabamComPage.ilanbasligi.clear();
+        arabamComPage.ilanbasligi.sendKeys("Sahibinden Mercedes - Benz Travego 15 SHD");
 
-  arabamComPage.fiyatInput.clear();
-  arabamComPage.fiyatInput.sendKeys("4.200.000");
+        arabamComPage.fiyatInput.clear();
+        arabamComPage.fiyatInput.sendKeys("4.200.000");
 
-  arabamComPage.yıl.clear();
-  arabamComPage.yıl.sendKeys("2011");
-
-  arabamComPage.km.clear();
-  arabamComPage.km.sendKeys("280.000");
-
-  arabamComPage.vitestipi.clear();
-  arabamComPage.vitestipi.sendKeys("Düz");
-
-  arabamComPage.vitesSayisi.clear();
-  arabamComPage.vitesSayisi.sendKeys("6+1");
-
-arabamComPage.yakitlitre.clear();
-arabamComPage.yakitlitre.sendKeys("550");
-
-arabamComPage.renk.clear();
-arabamComPage.renk.sendKeys("Beyaz");
+        ResuableMethods.wait(2);
 
 
+        arabamComPage.kmyayındadegil.clear();
+        arabamComPage.km.sendKeys("280.000");
 
+        ResuableMethods.wait(3);
 
-
-
+        ResuableMethods.scrollWithUiScrollable("Tamam");
 
 
     }
+
+    @Given("Ilan fotografları linkine tıkla ve son resmi sil ve silindigini dogrula")
+    public void ılan_fotografları_linkine_tıkla_ve_son_resmi_sil_ve_silindigini_dogrula() {
+
+        ResuableMethods.wait(3);
+        ResuableMethods.scrollWithUiScrollable("İlan Fotoğrafları");
+        arabamComPage.fotografSil.click();
+
+        ResuableMethods.scrollWithUiScrollable("Tamam");
+
+
+    }
+    @Given("ikinci Üc noktaya tikla")
+    public void ikinci_üc_noktaya_tikla() {
+
+        arabamComPage.ucnokta2.click();
+    }
+
+
 
 }

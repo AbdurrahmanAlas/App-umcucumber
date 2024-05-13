@@ -36,6 +36,10 @@ public class ArabamComPage {
     public MobileElement onkaputdegisen;
 
 
+    @FindBy(xpath = "(//*[@class=\"android.widget.ImageView\"])[2]")
+    public MobileElement ucnokta2;
+
+
 
     @FindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[1]")
     public MobileElement ilanbasligi;
@@ -87,8 +91,8 @@ public class ArabamComPage {
 
 
 
-    @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[8]")
-    public MobileElement yıl;
+    @FindBy(xpath = "//*[@text=\"2011\"]")
+    public MobileElement yil;
 
 
     @FindBy(xpath = "(//*[@class=\"android.widget.TextView\"])[12]")
@@ -102,6 +106,8 @@ public class ArabamComPage {
     public MobileElement yakitlitre;
 
 
+    @FindBy(xpath = "(//*[@class=\"android.widget.LinearLayout\"])[9]")
+    public MobileElement kmyayındadegil;
 
 
     @FindBy(id = "com.dogan.arabam:id/etPriceValue")
@@ -115,7 +121,15 @@ public class ArabamComPage {
     @FindBy(xpath = "//*[@class=\"android.widget.EditText\"]")
     public MobileElement aciklamaSil;
 
-    @FindBy(xpath = "//android.widget.RelativeLayout/android.widget.LinearLayout")
+    @FindBy(id = "android.widget.RelativeLayout/android.widget.LinearLayout")
     public MobileElement yeniAciklamaEkle;
+
+
+
+    @FindBy(xpath = "(//*[@class=\"android.widget.ImageView\"])[5]")
+    public MobileElement fotografSil;
+
+
+
 
 }
