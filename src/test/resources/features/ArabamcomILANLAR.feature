@@ -128,3 +128,17 @@ Feature: US_01 ARABAM COM İLANLAR > YAYINDAKI ILANLAR  MODULUNDE ISLEMLER
       * ikinci Üc noktaya tikla
      * "Düzenle" e tikla
       * Ilan fotografları linkine tıkla ve son resmi sil ve silindigini dogrula
+
+
+  @alas
+  Scenario: TC_0110  Ilan fotografları linkine tıkla ve son resmi sil ve silindigini dogrula
+
+    Given kullanıcı kurulumları tamamlar
+    * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
+    *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
+    * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+    * "Panelim" e tiklayin
+    * "İlanlar" a tikla
+    * "Yayında Olmayanlar" butonuna tiklaa
+    * Üc noktaya tikla
+    * "Vazgeç" butonuna tikla ve geri geldigini dogrula

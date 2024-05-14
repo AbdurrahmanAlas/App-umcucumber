@@ -89,6 +89,24 @@ public class ArabamComPage {
     public MobileElement kalınYaziSatinAl;
 
 
+    @FindBy(xpath = "(//*[@text=\"Sil\"])[1]")
+    public MobileElement mesajlar_SON;
+
+    @FindBy(xpath = "(//*[@text=\"Mesaj Yaz\"])[1]")
+    public MobileElement mesajlar_mesajyaz;
+
+    @FindBy(xpath = "//*[@text=\"Merhaba aracımız hala satılıktır.\"]")
+    public MobileElement mesajlar_Mesajyazıldımıkontrol;
+
+
+    @FindBy(id = "com.dogan.arabam:id/clItemAdvertList")
+    public MobileElement mesajlar_TumIlanlarGeldimi;
+
+    @FindBy(id = "com.dogan.arabam:id/action_settings")
+    public MobileElement mesajlar_ucnokta;
+
+
+
 
 
     @FindBy(xpath = "//*[@text=\"2011\"]")
