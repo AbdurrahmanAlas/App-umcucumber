@@ -11,6 +11,7 @@ public class ArabamcomMESAJLARStepdefinitions {
 
     @Given("{string} a tiklaa")
     public void a_tiklaa(String mesajlar) {
+        ResuableMethods.wait(3);
 
         ResuableMethods.scrollWithUiScrollable(mesajlar);
 
@@ -67,6 +68,31 @@ public class ArabamcomMESAJLARStepdefinitions {
 
     }
 
+    @Given("{string} a tiklayin")
+    public void a_tiklayin(String favori_ilanlar) {
+
+    ResuableMethods.scrollWithUiScrollable(favori_ilanlar);
+
+
+    }
+    @Given("{string} ne tiklayin")
+    public void ne_tiklayin(String favori_listesi) {
+
+ResuableMethods.scrollWithUiScrollable(favori_listesi);
+
+
+    }
+    @Given("{string} {string} {string} a tıklayın")
+    public void a_tıklayın(String tumu, String yayında, String yayında_olmayan) {
+
+ResuableMethods.scrollWithUiScrollable(tumu);
+ResuableMethods.wait(2);
+ResuableMethods.scrollWithUiScrollable(yayında);
+ResuableMethods.wait(2);
+ResuableMethods.scrollWithUiScrollable(yayında_olmayan);
+
+
+    }
 
 
 }

@@ -27,8 +27,8 @@
         * Üc noktayaa tikla
         * "Tüm İlanlarını Göster" linkine tikla
 
-    @alas
-    Scenario: TC_0203 Kullanici Arabam com girerek Mesajlar > Son mesaj > UcNoktaya tıkla mesaj atanın tüm mesajlarını kontrol et
+
+    Scenario: TC_0203 Kullanici Arabam com girerek Mesajlar > Son mesaj > UcNokta> Vazgec
       Given kullanıcı kurulumları tamamlar
       * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
       *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
@@ -38,3 +38,16 @@
       * Son gelen mesaja tikla
       * Üc noktayaa tikla
       * "Vazgeç" butonuna tikla ve dogrula
+
+
+
+    @alas
+    Scenario: TC_0204 Kullanici Arabam com girerek Mesajlar > Son mesaj > UcNoktaya tıkla mesaj atanın tüm mesajlarını kontrol et
+      Given kullanıcı kurulumları tamamlar
+      * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
+      *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
+      * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+      * "Panelim" e tiklayin
+      * "Favori ilanlar" a tiklayin
+      * "Favori Listesi" ne tiklayin
+      * "Tümü" "Yayında" "Yayında Olmayanlar" a tıklayın
