@@ -1,0 +1,5 @@
+
+1- apk indir
+2- apk yı APPS klasorune koy
+3- apk nın absolute unu kopyala configuration.propertiese yolu ekle
+4- Driverda appPackage ve appactivity leri ekle

@@ -106,6 +106,51 @@ public class ArabamComPage {
     public MobileElement mesajlar_ucnokta;
 
 
+    @FindBy(id = "com.dogan.arabam:id/textViewDescriptionTitle")
+    public MobileElement kayitli_favori_yok;
+
+
+    @FindBy(id = "com.dogan.arabam:id/etIndvQueryNumber")
+    public MobileElement plakayi_girin;
+
+
+    @FindBy(id = "com.dogan.arabam:id/et_address_description")
+    public MobileElement adres_yaz;
+
+    @FindBy(id = "com.dogan.arabam:id/spn_city")
+    public MobileElement adres_ilsec;
+
+    @FindBy(id = "com.dogan.arabam:id/spn_county")
+    public MobileElement adres_ilcesec;
+    @FindBy(id = "com.dogan.arabam:id/spn_district")
+    public MobileElement adres_semtsec;
+
+    @FindBy(id = "com.dogan.arabam:id/et_postal_code")
+    public MobileElement adres_postakodusec;
+
+
+    @FindBy(id = "com.dogan.arabam:id/et_email")
+    public MobileElement eposta;
+
+    @FindBy(id = "com.dogan.arabam:id/et_identity_number")
+    public MobileElement tckimlikno;
+
+    @FindBy(id = "com.dogan.arabam:id/et_tax_office")
+    public MobileElement vergidairesi;
+
+    @FindBy(id = "com.dogan.arabam:id/et_tax_no")
+    public MobileElement vergiNo;
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -94,5 +94,24 @@ ResuableMethods.scrollWithUiScrollable(yayında_olmayan);
 
     }
 
+    @Given("Favori aramalar sayfasina girdigini dogrula")
+    public void favori_aramalar_sayfasina_girdigini_dogrula() {
+
+        ResuableMethods.wait(2);
+
+        Assert.assertTrue(arabamComPage.kayitli_favori_yok.isDisplayed());
+
+
+    }
+
+
+    @Given("{string} e tıkla ve Bildirimlerin geldigini dogrula")
+    public void e_tıkla_ve_bildirimlerin_geldigini_dogrula(String bildirimlerim) {
+
+        ResuableMethods.scrollWithUiScrollable(bildirimlerim);
+
+
+
+    }
 
 }

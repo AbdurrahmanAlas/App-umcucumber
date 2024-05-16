@@ -41,13 +41,24 @@
 
 
 
-    @alas
+
     Scenario: TC_0204 Kullanici Arabam com girerek Mesajlar > Son mesaj > UcNoktaya tıkla mesaj atanın tüm mesajlarını kontrol et
       Given kullanıcı kurulumları tamamlar
       * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
       *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
       * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
       * "Panelim" e tiklayin
-      * "Favori ilanlar" a tiklayin
-      * "Favori Listesi" ne tiklayin
-      * "Tümü" "Yayında" "Yayında Olmayanlar" a tıklayın
+      * "Favori aramalar" a tiklayin
+      * Favori aramalar sayfasina girdigini dogrula
+
+
+    @alas
+    Scenario: US_0401 Arabamcom>Panelim> Bildirimlerim e tikla bildirmlerin geldigini dogrula
+
+      Given kullanıcı kurulumları tamamlar
+      * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
+      *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
+      * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+      * "Panelim" e tiklayin
+      * "Bildirimlerim" e tıkla ve Bildirimlerin geldigini dogrula
+
