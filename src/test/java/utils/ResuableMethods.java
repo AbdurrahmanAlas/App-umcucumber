@@ -17,6 +17,7 @@ import java.util.Date;
 public class ResuableMethods {
 
 
+
     public static void koordinatTiklamaMethodu(int xKoordinati,int yKoordinati,int beklemeSuresi ) throws InterruptedException {
         TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
         action.press(PointOption.point(xKoordinati,yKoordinati))
@@ -61,6 +62,15 @@ public class ResuableMethods {
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
         driver.findElementByXPath("//*[@text='" + elementText + "']").click();
 
+    }
+
+    public static void ekranKaydirmaMethodu(int xPress,int yPress,int wait,int xMove,int yMove){
+        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
+        action.press(PointOption.point(xPress,yPress))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(wait)))
+                .moveTo(PointOption.point(xMove,yMove))
+                .release()
+                .perform();
     }
 
     public static String getScreenshot(String name) throws IOException {
