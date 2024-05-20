@@ -40,6 +40,41 @@ public class ArabamComPage {
     public MobileElement ucnokta2;
 
 
+    @FindBy(id = "com.dogan.arabam:id/texViewTitle")
+    public MobileElement ekspertizsayfasigeldimi;
+
+
+    @FindBy(id = "com.dogan.arabam:id/textViewExpertisePointName")
+    public MobileElement adres_geldimi;
+
+
+    @FindBy(xpath = "//*[@text=\"Şubeleri incele\"]")
+    public MobileElement sube_incele;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @FindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[1]")
     public MobileElement ilanbasligi;

@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 import pages.ArabamComPage;
 import utils.ResuableMethods;
 
@@ -52,6 +53,60 @@ arabamComPage.vergiNo.sendKeys("12345678910");
 ResuableMethods.wait(2);
 ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
 
+
+    }
+
+
+
+    @Given("{string} e tiklaa")
+    public void e_tiklaa(String ekspertiz) {
+
+        ResuableMethods.scrollWithUiScrollable(ekspertiz);
+
+        ResuableMethods.wait(4);
+        ResuableMethods.scrollWithUiScrollable("Şubeleri incele");
+
+
+    }
+    @Given("Ekspertiz sayfasinin acildigini dogrula")
+    public void ekspertiz_sayfasinin_acildigini_dogrula() {
+
+        String expectedKelime="Ekspertiz";
+        String actualKelime=arabamComPage.ekspertizsayfasigeldimi.getText();
+
+        Assert.assertTrue(actualKelime.contains(expectedKelime));
+
+    }
+
+
+
+    @Given("{string} linke tikla")
+    public void linke_tikla(String subeleri_incele) {
+
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable(subeleri_incele);
+
+
+    }
+    @Given("{string} dropdowna tikla ve {string} sec ve {string} a bas")
+    public void dropdowna_tikla_ve_sec_ve_a_bas(String seciniz, String kayseri, String tamam) {
+
+        ResuableMethods.scrollWithUiScrollable(seciniz);
+        ResuableMethods.wait(3);
+        ResuableMethods.scrollWithUiScrollable(kayseri);
+        ResuableMethods.scrollWithUiScrollable(tamam);
+
+
+        String expectedKelime="Ankara";
+        String actualKelime=arabamComPage.adres_geldimi.getText();
+        Assert.assertTrue(actualKelime.contains(expectedKelime));
+
+
+    }
+
+
+    @Given("Şubeleri incele linke tikla")
+    public void şubeleri_incele_linke_tikla() {
 
     }
 
