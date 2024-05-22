@@ -52,6 +52,13 @@ public class ArabamComPage {
     public MobileElement sube_incele;
 
 
+    @FindBy(id = "com.dogan.arabam:id/imageViewClose")
+    public MobileElement expertiz_Carpı;
+
+
+    @FindBy(xpath = "(//*[@class=\"android.widget.FrameLayout\"])[5]")
+    public MobileElement basliklargorunuyormu;
+
 
 
 

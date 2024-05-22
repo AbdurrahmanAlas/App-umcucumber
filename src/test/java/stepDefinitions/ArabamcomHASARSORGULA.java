@@ -7,13 +7,13 @@ import utils.ResuableMethods;
 
 public class ArabamcomHASARSORGULA {
 
-    ArabamComPage arabamComPage=new ArabamComPage();
+    ArabamComPage arabamComPage = new ArabamComPage();
 
     @Given("Plakayi gir ve sorgula butonuna tikla")
     public void plakayi_gir_ve_sorgula_butonuna_tikla() {
 
-arabamComPage.plakayi_girin.sendKeys("38 LY 562");
-ResuableMethods.scrollWithUiScrollable("Sorgula");
+        arabamComPage.plakayi_girin.sendKeys("38 LY 562");
+        ResuableMethods.scrollWithUiScrollable("Sorgula");
 
 
     }
@@ -22,20 +22,20 @@ ResuableMethods.scrollWithUiScrollable("Sorgula");
     @Given("{string} ve {string} ye tikla ve adresi ekle")
     public void ve_ye_tikla_ve_adresi_ekle(String adres_Ekle, String kaydet) {
 
-   ResuableMethods.scrollWithUiScrollable(adres_Ekle);
+        ResuableMethods.scrollWithUiScrollable(adres_Ekle);
 
-   arabamComPage.adres_yaz.sendKeys("Kayseri Zümrüt mahallesi");
-   arabamComPage.adres_ilsec.click();
-   ResuableMethods.wait(3);
-   ResuableMethods.scrollWithUiScrollable("Kayseri");
-   arabamComPage.adres_ilcesec.click();
-   ResuableMethods.wait(3);
-   ResuableMethods.scrollWithUiScrollable("Kocasinan");
-   arabamComPage.adres_semtsec.click();
-   ResuableMethods.wait(3);
-   ResuableMethods.scrollWithUiScrollable("Zümrüt mahallesi");
-arabamComPage.adres_postakodusec.sendKeys("38020");
-   ResuableMethods.scrollWithUiScrollable(kaydet);
+        arabamComPage.adres_yaz.sendKeys("Kayseri Zümrüt mahallesi");
+        arabamComPage.adres_ilsec.click();
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable("Ankara");
+        arabamComPage.adres_ilcesec.click();
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable("Bala");
+        arabamComPage.adres_semtsec.click();
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable("Abazlı Mahallesi");
+        arabamComPage.adres_postakodusec.sendKeys("38020");
+        ResuableMethods.scrollWithUiScrollable(kaydet);
 
     }
 
@@ -43,19 +43,18 @@ arabamComPage.adres_postakodusec.sendKeys("38020");
     @Given("Telefon E-Posta* TC Kimlik Numarası Vergi Dairesi Vergi No Kredi Kartı na tikla ve islemleri yap ve yapildigini dogrula")
     public void telefon_e_posta_tc_kimlik_numarası_vergi_dairesi_vergi_no_kredi_kartı_na_tikla_ve_islemleri_yap_ve_yapildigini_dogrula() {
 
-arabamComPage.eposta.clear();
-ResuableMethods.wait(2);
-arabamComPage.eposta.sendKeys("serkan11aydin@gmail.com");
-arabamComPage.tckimlikno.sendKeys("12345678910");
-arabamComPage.vergidairesi.sendKeys("GevherNesibe");
-arabamComPage.vergiNo.sendKeys("12345678910");
+        arabamComPage.eposta.clear();
+        ResuableMethods.wait(2);
+        arabamComPage.eposta.sendKeys("serkan11aydin@gmail.com");
+        arabamComPage.tckimlikno.sendKeys("12345678910");
+        arabamComPage.vergidairesi.sendKeys("GevherNesibe");
+        arabamComPage.vergiNo.sendKeys("12345678910");
 
-ResuableMethods.wait(2);
-ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
 
 
     }
-
 
 
     @Given("{string} e tiklaa")
@@ -68,16 +67,16 @@ ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
 
 
     }
+
     @Given("Ekspertiz sayfasinin acildigini dogrula")
     public void ekspertiz_sayfasinin_acildigini_dogrula() {
 
-        String expectedKelime="Ekspertiz";
-        String actualKelime=arabamComPage.ekspertizsayfasigeldimi.getText();
+        String expectedKelime = "Ekspertiz";
+        String actualKelime = arabamComPage.ekspertizsayfasigeldimi.getText();
 
         Assert.assertTrue(actualKelime.contains(expectedKelime));
 
     }
-
 
 
     @Given("{string} linke tikla")
@@ -88,6 +87,7 @@ ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
 
 
     }
+
     @Given("{string} dropdowna tikla ve {string} sec ve {string} a bas")
     public void dropdowna_tikla_ve_sec_ve_a_bas(String seciniz, String kayseri, String tamam) {
 
@@ -97,8 +97,8 @@ ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
         ResuableMethods.scrollWithUiScrollable(tamam);
 
 
-        String expectedKelime="Ankara";
-        String actualKelime=arabamComPage.adres_geldimi.getText();
+        String expectedKelime = "Ankara";
+        String actualKelime = arabamComPage.adres_geldimi.getText();
         Assert.assertTrue(actualKelime.contains(expectedKelime));
 
 
@@ -109,5 +109,72 @@ ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
     public void şubeleri_incele_linke_tikla() {
 
     }
+
+
+
+    @Given("{string} a bas {string} , {string} , {string} ,{string} , tıkla acılıyormu kontrol et")
+    public void a_bas_tıkla_acılıyormu_kontrol_et(String avantaj, String motor_e, String mekanik_e, String kaporta_E, String obd_e) {
+
+        ResuableMethods.scrollWithUiScrollable(avantaj);
+        ResuableMethods.wait(1);
+        ResuableMethods.scrollWithUiScrollable(motor_e);
+        arabamComPage.expertiz_Carpı.click();
+        ResuableMethods.wait(1);
+        ResuableMethods.scrollWithUiScrollable(mekanik_e);
+        arabamComPage.expertiz_Carpı.click();
+        ResuableMethods.wait(1);
+        ResuableMethods.scrollWithUiScrollable(kaporta_E);
+        arabamComPage.expertiz_Carpı.click();
+        ResuableMethods.wait(1);
+        ResuableMethods.scrollWithUiScrollable(obd_e);
+        arabamComPage.expertiz_Carpı.click();
+        ResuableMethods.wait(1);
+
+
+    }
+
+    @Given("{string} a bas {string} , {string} , {string} ve dogrulayin")
+    public void a_bas_ve_dogrulayin(String start, String motor_e, String mekanik_e, String kaporta_e) {
+
+        ResuableMethods.scrollWithUiScrollable(start);
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable(motor_e);
+        Assert.assertTrue(arabamComPage.expertiz_Carpı.isDisplayed());
+        ResuableMethods.wait(1);
+        arabamComPage.expertiz_Carpı.click();
+
+        ResuableMethods.scrollWithUiScrollable(mekanik_e);
+        Assert.assertTrue(arabamComPage.expertiz_Carpı.isDisplayed());
+        ResuableMethods.wait(1);
+        arabamComPage.expertiz_Carpı.click();
+        ResuableMethods.wait(1);
+        ResuableMethods.scrollWithUiScrollable(kaporta_e);
+        Assert.assertTrue(arabamComPage.expertiz_Carpı.isDisplayed());
+        ResuableMethods.wait(1);
+        arabamComPage.expertiz_Carpı.click();
+        ResuableMethods.wait(3);
+
+        Assert.assertTrue(arabamComPage.basliklargorunuyormu.isDisplayed());
+
+
+    }
+
+
+    @Given("{string} de {string} ye tiklaa")
+    public void de_ye_tiklaa(String expertiz, String paketleri_incele) {
+
+        ResuableMethods.scrollWithUiScrollable(expertiz);
+        ResuableMethods.scrollWithUiScrollable(paketleri_incele);
+
+
+    }
+
+    @Given("{string} a butonuna tikla")
+    public void a_butonuna_tikla(String satin_al) {
+
+        ResuableMethods.scrollWithUiScrollable(satin_al);
+
+    }
+
 
 }
