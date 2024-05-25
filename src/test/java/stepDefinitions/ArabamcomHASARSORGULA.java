@@ -1,11 +1,24 @@
 package stepDefinitions;
 
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import pages.ArabamComPage;
+import utils.Driver;
 import utils.ResuableMethods;
 
+import java.time.Duration;
+
 public class ArabamcomHASARSORGULA {
+
+    AndroidDriver<AndroidElement> driver = Driver.getAndroidDriver();
+    TouchAction action = new TouchAction<>(driver);
 
     ArabamComPage arabamComPage = new ArabamComPage();
 
@@ -20,22 +33,81 @@ public class ArabamcomHASARSORGULA {
 
 
     @Given("{string} ve {string} ye tikla ve adresi ekle")
-    public void ve_ye_tikla_ve_adresi_ekle(String adres_Ekle, String kaydet) {
+    public void ve_ye_tikla_ve_adresi_ekle(String adres_Ekle, String kaydet) throws InterruptedException {
 
         ResuableMethods.scrollWithUiScrollable(adres_Ekle);
 
-        arabamComPage.adres_yaz.sendKeys("Kayseri Zümrüt mahallesi");
+        arabamComPage.adres_yaz.sendKeys("Zümrüt mahallesi");
         arabamComPage.adres_ilsec.click();
+        ResuableMethods.wait(5);
+
+        for (int i = 0; i < 4; i++) {
+
+            action.press(PointOption.point(827, 2211)).
+                    waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))).
+                    moveTo(PointOption.point(827, 900)).release().perform();
+
+        }
+
+
+      driver.navigate().back();
+
+        //       ResuableMethods.ekranKaydirmaMethodu(851, 2211, 10, 851, 662);
+
+//851 2211    // 662 2211
+
+        arabamComPage.tckimlikno.sendKeys("12345678012");
+        arabamComPage.vergidairesi.sendKeys("Gevher");
+        arabamComPage.vergiNo.sendKeys("123456");
+
+
         ResuableMethods.wait(2);
-        ResuableMethods.scrollWithUiScrollable("Ankara");
-        arabamComPage.adres_ilcesec.click();
+        ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
+
+        arabamComPage.kredikarti_no.click();
         ResuableMethods.wait(2);
-        ResuableMethods.scrollWithUiScrollable("Bala");
-        arabamComPage.adres_semtsec.click();
+        arabamComPage.kredikarti_no.sendKeys("1234123412341234");
+
+        ResuableMethods.wait(1);
+
+        ResuableMethods.ekranSagaKaydirma(4);
+
+        arabamComPage.kredikarti_adSoyad.sendKeys("Abdurrahman Alas");
+
+        ResuableMethods.ekranSagaKaydirma(3);
+        ResuableMethods.wait(1);
+        arabamComPage.kredikarti_tarih.click();
         ResuableMethods.wait(2);
-        ResuableMethods.scrollWithUiScrollable("Abazlı Mahallesi");
-        arabamComPage.adres_postakodusec.sendKeys("38020");
-        ResuableMethods.scrollWithUiScrollable(kaydet);
+
+        arabamComPage.kredikarti_tarih.sendKeys("1225");
+
+
+
+
+
+
+
+
+//        arabamComPage.kredikarti_guvenlikkod.sendKeys("345");
+//        ResuableMethods.wait(2);
+//        arabamComPage.kredikarti_guvenlikkod.click();
+
+
+        ResuableMethods.wait(2);
+        //762 2066
+
+
+        ResuableMethods.scrollWithUiScrollable("Devam");
+
+//        ResuableMethods.scrollWithUiScrollable("Ankara");
+//        arabamComPage.adres_ilcesec.click();
+//        ResuableMethods.wait(2);
+//        ResuableMethods.scrollWithUiScrollable("Bala");
+//        arabamComPage.adres_semtsec.click();
+//        ResuableMethods.wait(2);
+//        ResuableMethods.scrollWithUiScrollable("Abazlı Mahallesi");
+//        arabamComPage.adres_postakodusec.sendKeys("38020");
+
 
     }
 
@@ -52,6 +124,10 @@ public class ArabamcomHASARSORGULA {
 
         ResuableMethods.wait(2);
         ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
+
+
+
+
 
 
     }
@@ -109,7 +185,6 @@ public class ArabamcomHASARSORGULA {
     public void şubeleri_incele_linke_tikla() {
 
     }
-
 
 
     @Given("{string} a bas {string} , {string} , {string} ,{string} , tıkla acılıyormu kontrol et")

@@ -60,6 +60,9 @@ public class ArabamComPage {
     public MobileElement basliklargorunuyormu;
 
 
+    @FindBy(id = "com.dogan.arabam:id/spn_district")
+    public MobileElement kayseri_tikla;
+
 
 
 
@@ -162,7 +165,7 @@ public class ArabamComPage {
     @FindBy(id = "com.dogan.arabam:id/spn_city")
     public MobileElement adres_ilsec;
 
-    @FindBy(id = "com.dogan.arabam:id/spn_county")
+    @FindBy(xpath = "(//*[@text=\"Seçiniz\"])[2]")
     public MobileElement adres_ilcesec;
     @FindBy(id = "com.dogan.arabam:id/spn_district")
     public MobileElement adres_semtsec;
@@ -183,12 +186,25 @@ public class ArabamComPage {
     @FindBy(id = "com.dogan.arabam:id/et_tax_no")
     public MobileElement vergiNo;
 
+    @FindBy(xpath = "//*[@text=\"XXXX XXXX XXXX XXXX\"]")
+    public MobileElement kredikarti_no;
+
+
+    @FindBy(xpath = "(//*[@class=\"android.widget.EditText\"])[1]")
+    public MobileElement kredikarti_adSoyad;
+
+    @FindBy(xpath = "//*[@text=\"AA/YY\"]")
+    public MobileElement kredikarti_tarih;
+
+
+    @FindBy(xpath = "//*[@text=\"XXX\"]")
+    public MobileElement kredikarti_guvenlikkod;
 
 
 
 
 
-
+//936 2201
 
 
 

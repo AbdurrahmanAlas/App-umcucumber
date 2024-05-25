@@ -2,12 +2,14 @@ package utils;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -25,6 +27,17 @@ public class ResuableMethods {
                 .perform();
         Thread.sleep(beklemeSuresi);
     }
+
+
+    public static void ekranSagaKaydirma(int waitAction){
+        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
+        action.press(PointOption.point(1066,866))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(waitAction)))
+                .moveTo(PointOption.point(20,866))
+                .release()
+                .perform();
+    }
+
 
     public static void ekranAssagiKaydirma(int waitAction){
         TouchAction action=new TouchAction<>(Driver.getAndroidDriver());

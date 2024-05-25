@@ -26,3 +26,19 @@ public class ConfigReader {
         return properties.getProperty(key);
     }
 }
+
+/*
+   arabamComPage.expertiz_Carpı.click();
+
+        ResuableMethods.wait(3);
+        arabamComPage.tckimlikno.sendKeys("12345656566");
+        arabamComPage.vergidairesi.sendKeys("GevherNesibe");
+        arabamComPage.vergiNo.sendKeys("25852222");
+
+        ResuableMethods.wait(2);
+
+        ResuableMethods.scrollWithUiScrollable("Kredi Kartı");
+
+        arabamComPage.kredikarti_no.sendKeys("1234567891234567");
+
+ */
