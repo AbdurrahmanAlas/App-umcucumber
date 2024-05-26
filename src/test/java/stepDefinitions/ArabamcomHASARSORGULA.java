@@ -81,6 +81,11 @@ public class ArabamcomHASARSORGULA {
 
         arabamComPage.kredikarti_tarih.sendKeys("1225");
 
+        ResuableMethods.ekranSagaKaydirma(5);
+        arabamComPage.kredikarti_guvenlikkod.sendKeys("356");
+        arabamComPage.kredikarti_guvenlikkod.click();
+        ResuableMethods.ekranSagaKaydirma(4);
+
 
 
 
@@ -248,6 +253,18 @@ public class ArabamcomHASARSORGULA {
     public void a_butonuna_tikla(String satin_al) {
 
         ResuableMethods.scrollWithUiScrollable(satin_al);
+
+        ResuableMethods.wait(3);
+    }
+    @Given("Fatura bilgileri ekranın geldigini dogrula")
+    public void fatura_bilgileri_ekranın_geldigini_dogrula() {
+
+
+     String expectedKelime="Fatura Bilgileri";
+     String actualKelime=arabamComPage.Fatura_bilgilerigeldiginidogrula.getText();
+
+     Assert.assertTrue(actualKelime.contains(expectedKelime));
+
 
     }
 

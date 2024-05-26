@@ -200,6 +200,9 @@ public class ArabamComPage {
     @FindBy(xpath = "//*[@text=\"XXX\"]")
     public MobileElement kredikarti_guvenlikkod;
 
+    @FindBy(xpath = "//*[@text=\"Fatura Bilgileri\"]")
+    public MobileElement Fatura_bilgilerigeldiginidogrula;
+
 
 
 
