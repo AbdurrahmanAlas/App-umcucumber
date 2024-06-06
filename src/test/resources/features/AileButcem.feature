@@ -3,7 +3,7 @@
 
 
   Feature:Aile Butcem Login Test
-    @alas
+
     Scenario: Kullanici aile butcem uygulamasına basarili bir sekilde giris yaparak ilgili gorevleri yerine getirir
 
       Given kullanıcı kurulumları tamamlar

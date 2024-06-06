@@ -39,12 +39,14 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-            caps.setCapability("appPackage","com.dogan.arabam");
-            caps.setCapability("appActivity","com.dogan.arabam.presentation.feature.home.HomeActivity");
+            caps.setCapability("appPackage","org.telegram.messenger");
+
+
+            caps.setCapability("appActivity","org.telegram.ui.CallsActivity");
             caps.setCapability(MobileCapabilityType.NO_RESET,false);
             /* eger bu capability FALSE olarak kullanilirsa,uygulama test edildikten sonra her seferinde kullanici datalari temizlenir ve
             uygulamanin ilk install haline dondurulur
-             */
+            org.telegram.ui.CallsActivity */
             // eger true olursa kullanicili bilgileri test bittikten sonra sifirlan ve tercihler kaydedilir.Islemlere kaldiginiz yerden devam edilir
 
 

@@ -59,6 +59,16 @@ Feature: US_04 Arabamcom  Hasar Sorgulama kontrol et
     * "Ekspertiz" de "Paketleri incele" ye tiklaa
     * "Start" a bas "Motor ekspertiz" , "Mekanik ekspertiz" , "Kaporta / Boya" ve dogrulayin
 
+  Scenario: TC_0406 Arabamcom>Panelim>Expertiz e tikla ve ekrana geldıgını dogrula ve Paketleri Incele sayfasından incele
+    Given kullanıcı kurulumları tamamlar
+    * Ana Ekranda bulunan "Panelim" a tiklayin ve ardindan Giris yapı ulasın
+    *  "Giriş Yap" a tiklayin ve ardindan login sayfasina ulasin
+    * "mailArabam" ve "passwordArabam" bilgilerini  girerek kullanici bilgileriyle "Giriş Yap" a tikla
+    * "Panelim" e tiklayin
+    * "Ekspertiz" de "Paketleri incele" ye tiklaa
+    * "Avantaj" a bas "Motor ekspertiz" , "Mekanik ekspertiz" , "Kaporta / Boya" ,"OBD / Beyin testi" , tıkla acılıyormu kontrol et
+    * "Satın al" a butonuna tikla
+    * Fatura bilgileri ekranın geldigini dogrula
 
 
   Scenario: TC_0405 Arabamcom>Panelim>Expertiz e tikla ve ekrana geldıgını dogrula ve Paketleri Incele sayfasından incele
@@ -72,4 +82,6 @@ Feature: US_04 Arabamcom  Hasar Sorgulama kontrol et
     * "Satın al" a butonuna tikla
     * "Adres Ekle" ve "Kaydet" ye tikla ve adresi ekle
 
+### Klavyede kredi kartı bilgilerini girdikten sonra güvenlik kodundan sonra ok
+# tuşuna basıp satın alma bilgilerinin girildigi dogrulanacak.
     # plus full premium paketlerini sonra yap
