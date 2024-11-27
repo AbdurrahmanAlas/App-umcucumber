@@ -21,8 +21,8 @@ public class ApkYuklemeStepdefinitions {
         AndroidDriver<AndroidElement> driver;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "PIXEL");// capabilities.setCapability("deviceName","Pixel 2");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel");// capabilities.setCapability("deviceName","Pixel 2");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.0");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty(apkDosyaYolu));

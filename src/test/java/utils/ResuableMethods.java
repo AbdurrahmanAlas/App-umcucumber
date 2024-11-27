@@ -8,6 +8,7 @@ import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
 
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -47,6 +48,8 @@ public class ResuableMethods {
                 .release()
                 .perform();
     }
+
+
 
     public static void ekranYukariKaydirma(int waitAction){
         TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
