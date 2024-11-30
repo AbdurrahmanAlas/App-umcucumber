@@ -17,8 +17,8 @@ public class Driver {
     private static AndroidDriver<AndroidElement> appiumDriver;
     private static  IOSDriver<IOSElement> iosDriver;
 
-    static final String TELEFONADI="PIXEL";
-    static final String ANDROIDVERSION="10.0";
+    static final String TELEFONADI="Pixel";
+    static final String ANDROIDVERSION="11.0";
     static final String PLATFORM="Android";
     static final String OTOMASYON_ISMI="UiAutomator2";
 
@@ -39,10 +39,14 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-            caps.setCapability("appPackage","org.telegram.messenger");
+
+          //  caps.setCapability("appPackage","com.lcwaikiki.android");
+           // caps.setCapability("appActivity","com.lcwaikiki.android.ui.SplashActivity");
+
+            caps.setCapability("appPackage","trendyol.com");
+            caps.setCapability("appActivity","com.trendyol.common.splash.impl.ui.SplashActivity");
 
 
-            caps.setCapability("appActivity","org.telegram.ui.CallsActivity");
             caps.setCapability(MobileCapabilityType.NO_RESET,false);
             /* eger bu capability FALSE olarak kullanilirsa,uygulama test edildikten sonra her seferinde kullanici datalari temizlenir ve
             uygulamanin ilk install haline dondurulur
