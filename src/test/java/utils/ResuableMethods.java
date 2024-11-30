@@ -60,33 +60,50 @@ public class ResuableMethods {
                 .perform();
     }
 
-    public static void scrollScreenMethod(int xKoordtinati,int yKoordinati,int bekleme,int mXKoordinati,int mYKoordinati,int threadSleep) throws InterruptedException {
-        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
-        action.press(PointOption.point(xKoordtinati,yKoordinati))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(bekleme)))
-                .moveTo(PointOption.point(mXKoordinati,mYKoordinati))
-                .release()
-                .perform();
-        Thread.sleep(threadSleep);
+//    public static void scrollScreenMethod(int xKoordtinati,int yKoordinati,int bekleme,int mXKoordinati,int mYKoordinati,int threadSleep) throws InterruptedException {
+//        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
+//        action.press(PointOption.point(xKoordtinati,yKoordinati))
+//                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(bekleme)))
+//                .moveTo(PointOption.point(mXKoordinati,mYKoordinati))
+//                .release()
+//                .perform();
+//        Thread.sleep(threadSleep);
+//
+//    }
 
-    }
+//    public static void scrollWithUiScrollable(String elementText) {
+//        //burdaki browserda BrowserDriver.getBrowserDriver kullanılır
+//        // Driver.getAndroidDriver kullanılır.
+//        AndroidDriver driver = (AndroidDriver) Driver.getAndroidDriver();
+//        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
+//        driver.findElementByXPath("//*[@text='" + elementText + "']").click();
+//
+//    }
 
     public static void scrollWithUiScrollable(String elementText) {
-        //burdaki browserda BrowserDriver.getBrowserDriver kullanılır
-        // Driver.getAndroidDriver kullanılır.
         AndroidDriver driver = (AndroidDriver) Driver.getAndroidDriver();
-        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
-        driver.findElementByXPath("//*[@text='" + elementText + "']").click();
 
+        try {
+            // UiScrollable ile hedef elementi görünür hale getir
+            driver.findElementByAndroidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
+                            ".scrollIntoView(new UiSelector().text(\"" + elementText + "\"))");
+
+            // Elementi bulduktan sonra tıkla
+            driver.findElementByXPath("//*[@text='" + elementText + "']").click();
+        } catch (Exception e) {
+            System.err.println("Element bulunamadı veya tıklanamadı: " + elementText);
+            e.printStackTrace();
+        }
     }
 
-    public static void ekranKaydirmaMethodu(int xPress,int yPress,int wait,int xMove,int yMove){
-        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
-        action.press(PointOption.point(xPress,yPress))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(wait)))
-                .moveTo(PointOption.point(xMove,yMove))
-                .release()
-                .perform();
+    public static void ekranKaydirmaMethodu(int startX, int startY, int endX, int endY, int waitInMillis) {
+        TouchAction action = new TouchAction<>(Driver.getAndroidDriver());
+        action.press(PointOption.point(startX, startY)) // Başlangıç noktası
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(waitInMillis))) // Bekleme süresi
+                .moveTo(PointOption.point(endX, endY)) // Bitiş noktası
+                .release() // Parmağı kaldır
+                .perform(); // Hareketi uygula
     }
 
     public static String getScreenshot(String name) throws IOException {
