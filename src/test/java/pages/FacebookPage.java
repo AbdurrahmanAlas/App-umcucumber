@@ -30,4 +30,11 @@ public class FacebookPage {
     @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Manage your content\"]")
     public MobileElement manageryourcontent;
 
+
+    @FindBy(xpath = "//android.view.View[@text=\"Mobile number or email\"]")
+    public MobileElement facemail;
+
+    @FindBy(xpath = "//android.view.View[@text=\"Password\"]")
+    public MobileElement facepassword;
+
 }

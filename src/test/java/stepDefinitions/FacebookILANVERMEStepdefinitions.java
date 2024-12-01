@@ -2,11 +2,27 @@ package stepDefinitions;
 
 import io.cucumber.java.en.Given;
 import pages.FacebookPage;
+import utils.ConfigReader;
 import utils.ResuableMethods;
 
 public class FacebookILANVERMEStepdefinitions {
 
     FacebookPage facebookPage=new FacebookPage();
+
+
+    @Given("{string} ve {string} gir ve {string} a tikla")
+    public void ve_gir_ve_a_tikla(String facemail, String facepassword, String girisyap) {
+
+        ResuableMethods.wait(24);
+        facebookPage.facemail.sendKeys(ConfigReader.getProperty(facemail));
+        facebookPage.facepassword.sendKeys(ConfigReader.getProperty(facepassword));
+
+        ResuableMethods.scrollWithUiScrollable("Log in");
+
+
+
+    }
+
     @Given("{string} butona tikla")
     public void butona_tikla(String login) {
 
