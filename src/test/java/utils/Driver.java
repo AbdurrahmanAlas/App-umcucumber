@@ -46,6 +46,10 @@ public class Driver {
             caps.setCapability("appPackage","trendyol.com");
             caps.setCapability("appActivity","com.trendyol.common.splash.impl.ui.SplashActivity");
 
+//            caps.setCapability("appPackage","com.facebook.katana");
+//            caps.setCapability("appActivity","com.facebook.katana.LoginActivity");
+
+
 
             caps.setCapability(MobileCapabilityType.NO_RESET,false);
             /* eger bu capability FALSE olarak kullanilirsa,uygulama test edildikten sonra her seferinde kullanici datalari temizlenir ve
