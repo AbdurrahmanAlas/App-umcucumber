@@ -13,3 +13,14 @@
       * "RAM Kapasitesi " ne2 tikla ve arama kismina 8GB yaz ve tikla
 
 
+      Scenario: Trendyolda aradığın özellikte laptop bulma
+        Given kullanıcı kurulumları tamamlar
+        * "ERKEK" yazan kismina tikla
+        * Ana sayfada "Kategoriler" kismina tikla
+        * Mouse scroll ile asagı kaydır ve "Elektronik" kismini sec
+        * Elektronik kisminda "Laptop" alanina tikla
+        * "Filtrele" kisminaa tikla
+        *
+
+
+
