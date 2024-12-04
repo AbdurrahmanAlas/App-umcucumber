@@ -100,4 +100,46 @@ TrendyolPage trendyolPage=new TrendyolPage();
         trendyolPage.urunlerilistele.click();
     }
 
+
+    @Given("Elektronik kisminda {string} alanina tikla")
+    public void elektronik_kisminda_alanina_tikla(String laptop) throws InterruptedException {
+
+        ResuableMethods.koordinatTiklamaMethodu(685,255,3);
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable(laptop);
+    }
+    @Given("{string} ya tiklaa")
+    public void ya_tiklaa(String marka) {
+
+
+        ResuableMethods.scrollWithUiScrollable(marka);
+    }
+    @Given("Marka Ara kismina {string} yaz ve tikla tekrar sil ve {string} yaz ve tikla")
+    public void marka_ara_kismina_yaz_ve_tikla_tekrar_sil_ve_yaz_ve_tikla(String lenovo, String hp) {
+
+        ResuableMethods.scrollWithUiScrollable(lenovo);
+        ResuableMethods.wait(4);
+        ResuableMethods.scrollWithUiScrollable(hp);
+
+
+
+    }
+    @Given("{string} ne tiklaa ve 32GB ram seç")
+    public void ne_tiklaa_ve_32gb_ram_seç(String ram) {
+
+        ResuableMethods.scrollWithUiScrollable(ram);
+        ResuableMethods.wait(3);
+        ResuableMethods.scrollWithUiScrollable("40 GB ");
+
+    }
+    @Given("{string} na tikla ve {string} seç")
+    public void na_tikla_ve_seç(String ekrankartı, String nvdia) {
+
+        ResuableMethods.scrollWithUiScrollable(ekrankartı);
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable(nvdia);
+
+
+    }
+
 }
