@@ -35,4 +35,16 @@ public class TrendyolPage {
 
 
 
+    @FindBy(id = "trendyol.com:id/edittext_search_view")
+    public MobileElement homepageSearchbox;
+
+
+    @FindBy(id = "trendyol.com:id/imageViewTooltipClose")
+    public MobileElement ekhizmetcarpisi;
+
+
+    @FindBy(xpath = "//*[@text=\"vestiyer\"]")
+    public MobileElement vestiyer;
+
+
 }

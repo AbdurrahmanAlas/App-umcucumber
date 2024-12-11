@@ -30,5 +30,21 @@
         * "Ekran Kartı " na tikla ve "Nvidia GeForce RTX 3050" seç
         * "UYGULA" butonuna tikla
 
+    @trendyol3
+        Scenario: Trendyolda en cok favorilenen vestiyer bulma
+
+          Given kullanıcı kurulumları tamamlar
+          * "ERKEK" yazan kismina tikla
+          * Ana ekranda searchbox kutusuna "vestiyer" yaz ve ara
+          * "Sırala" butonuna tikla ve "En Favoriler" butonuna tikla
+          * Ilk gelen urune tikla
+        *   "Sepete Ekle" ye tikla
+        *   sonra "Devam Et" e tikla ve Ekhizmet carpısına tikla
+        *   "Sepeti Onayla" ya tiklaaa
+        *    Sepeti onayladıktan sonra acılan "Üye Olmadan Devam Et" butonuna tikla
+        *    "VAZGEÇ" de bitir.
+
+
+
 
 

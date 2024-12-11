@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.TrendyolPage;
@@ -142,4 +143,66 @@ TrendyolPage trendyolPage=new TrendyolPage();
 
     }
 
+    @Given("Ana ekranda searchbox kutusuna {string} yaz ve ara")
+    public void ana_ekranda_searchbox_kutusuna_yaz_ve_ara(String vestiyer) throws InterruptedException {
+
+        ResuableMethods.scrollWithUiScrollable("Anasayfa");
+        ResuableMethods.wait(1);
+        trendyolPage.homepageSearchbox.click();
+       trendyolPage.homepageSearchbox.sendKeys(vestiyer);
+        ResuableMethods.wait(1);
+      ResuableMethods.koordinatTiklamaMethodu(117,436,3);
+
+    }
+
+    @Given("{string} butonuna tikla ve {string} butonuna tikla")
+    public void butonuna_tikla_ve_butonuna_tikla(String sirala, String enfavoriler) {
+
+
+        ResuableMethods.scrollWithUiScrollable(sirala);
+        ResuableMethods.wait(2);
+        ResuableMethods.scrollWithUiScrollable(enfavoriler);
+
+        ResuableMethods.wait(3);
+    }
+
+    @Given("{string} ye tikla")
+    public void ye_tikla(String sepeteekle) {
+
+        ResuableMethods.scrollWithUiScrollable(sepeteekle);
+
+    }
+    @Given("sonra {string} e tikla ve Ekhizmet carpısına tikla")
+    public void sonra_e_tikla_ve_ekhizmet_carpısına_tikla(String devamet) {
+
+        ResuableMethods.scrollWithUiScrollable(devamet);
+        ResuableMethods.wait(2);
+        trendyolPage.ekhizmetcarpisi.click();
+
+    }
+    @Given("{string} ya tiklaaa")
+    public void ya_tiklaaa(String sepetionayla) {
+
+        ResuableMethods.scrollWithUiScrollable(sepetionayla);
+    }
+    @Given("Sepeti onayladıktan sonra acılan {string} butonuna tikla")
+    public void sepeti_onayladıktan_sonra_acılan_butonuna_tikla(String uyeolmadandevam) {
+
+        ResuableMethods.wait(1);
+        ResuableMethods.scrollWithUiScrollable(uyeolmadandevam);
+    }
+    @Given("{string} de bitir.")
+    public void de_bitir(String vazgec) {
+
+        ResuableMethods.scrollWithUiScrollable(vazgec);
+    }
+
+
+    @Given("Ilk gelen urune tikla")
+    public void ılk_gelen_urune_tikla() throws InterruptedException {
+
+
+  ResuableMethods.koordinatTiklamaMethodu(167,879,3);
+
+    }
 }
