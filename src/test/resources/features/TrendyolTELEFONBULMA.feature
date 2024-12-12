@@ -44,7 +44,22 @@
         *    Sepeti onayladıktan sonra acılan "Üye Olmadan Devam Et" butonuna tikla
         *    "VAZGEÇ" de bitir.
 
+    @trendyol4
 
+    Scenario: Trendyolda beyaz eşyadan buzdolabı sec 40000-50000 arası tikla
 
+      Given  kullanıcı kurulumları tamamlar
+      * "ERKEK" yazan kismina tikla
+      *  Ana sayfada "Kategoriler" kismina tikla
+      * Mouse scroll ile asagı kaydır ve "Elektronik" kismini sec
+      * Elektronik kisminda "Beyaz Eşya" alanina tikla
+     *  "Buzdolabı" sec ve "Fiyat" a tikla
+      * "40000 TL - 50000 TL" ye tiklaa
+      * "Uygula" butonuna tikla
+      * "Sepete Ekle" ye tikla
+      *   sonra "Devam Et" e tikla ve Ekhizmet carpısına tikla
+      *   "Sepeti Onayla" ya tiklaaa
+      *    Sepeti onayladıktan sonra acılan "Üye Olmadan Devam Et" butonuna tikla
+      *    "VAZGEÇ" de bitir.
 
 

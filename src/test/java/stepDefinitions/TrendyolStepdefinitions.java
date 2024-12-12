@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -204,5 +206,34 @@ TrendyolPage trendyolPage=new TrendyolPage();
 
   ResuableMethods.koordinatTiklamaMethodu(167,879,3);
 
+    }
+
+
+    @Given("{string} sec ve {string} a tikla")
+    public void sec_ve_a_tikla(String buzdolabı, String fiyat) throws InterruptedException {
+       ResuableMethods.scrollWithUiScrollable(buzdolabı);
+       ResuableMethods.wait(3);
+       ResuableMethods.koordinatTiklamaMethodu(40,274,3);
+        // Sağ ok tuşuna 6 kez bas
+        for (int i = 0; i < 6; i++) {
+            driver.pressKey(new KeyEvent(AndroidKey.DPAD_RIGHT));
+            Thread.sleep(500); // Tuşlar arasında kısa bir bekleme
+        }
+
+        ResuableMethods.scrollWithUiScrollable(fiyat);
+        ResuableMethods.wait(1);
+
+
+    }
+
+
+    @Given("{string} ye tiklaa")
+    public void ye_tiklaa(String kırkbinellibin) throws InterruptedException {
+
+        ResuableMethods.scrollWithUiScrollable(kırkbinellibin);
+        ResuableMethods.wait(3);
+        ResuableMethods.koordinatTiklamaMethodu(40,274,3);
+        ResuableMethods.wait(2);
+        ResuableMethods.koordinatTiklamaMethodu(590,478,3);
     }
 }
