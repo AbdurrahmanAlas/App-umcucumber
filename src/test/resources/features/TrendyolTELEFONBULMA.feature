@@ -62,4 +62,18 @@
       *    Sepeti onayladıktan sonra acılan "Üye Olmadan Devam Et" butonuna tikla
       *    "VAZGEÇ" de bitir.
 
+    @trendyol5
+
+      Scenario: Trendyolda Android Televizyon arama
+        Given  kullanıcı kurulumları tamamlar
+        * "ERKEK" yazan kismina tikla
+        * 10 saniye bekle
+        * Ana sayfada "Kategoriler" kismina tikla
+        * Mouse scroll ile asagı kaydır ve "Elektronik" kismini sec
+        * Elektronik kisminda "TV & Görüntü & Ses" alanina tikla
+        *  TV & Görüntü & Ses kismindan "Televizyon" a tikla
+      * "Filtrele" kisminaa tikla
+      * "Fiyat " kismina tikla
+      *  Dörtbinbesyuztl ye tikla
+      * "UYGULA" butonuna tikla
 

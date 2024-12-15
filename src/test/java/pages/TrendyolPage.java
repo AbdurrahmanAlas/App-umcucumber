@@ -47,4 +47,12 @@ public class TrendyolPage {
     public MobileElement vestiyer;
 
 
+
+    @FindBy(xpath = "//*[@text=\"TV & Görüntü & Ses\"]")
+    public MobileElement tv;
+
+    @FindBy(id = "trendyol.com:id/textViewTooltipTitle")
+    public MobileElement gorseldeara;
+
+
 }

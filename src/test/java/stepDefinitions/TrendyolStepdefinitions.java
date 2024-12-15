@@ -1,9 +1,12 @@
 package stepDefinitions;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,6 +17,8 @@ import pages.TrendyolPage;
 import utils.Driver;
 import utils.ResuableMethods;
 
+import java.time.Duration;
+
 public class TrendyolStepdefinitions {
 
 TrendyolPage trendyolPage=new TrendyolPage();
@@ -23,13 +28,15 @@ TrendyolPage trendyolPage=new TrendyolPage();
     @Given("{string} yazan kismina tikla")
     public void yazan_kismina_tikla(String erkek) {
 
-        ResuableMethods.wait(15);
+        ResuableMethods.wait(17);
         ResuableMethods.scrollWithUiScrollable(erkek);
+
 
 
     }
     @Given("Ana sayfada {string} kismina tikla")
     public void ana_sayfada_kismina_tikla(String kategoriler) {
+
 
    ResuableMethods.scrollWithUiScrollable(kategoriler);
 
@@ -236,4 +243,49 @@ TrendyolPage trendyolPage=new TrendyolPage();
         ResuableMethods.wait(2);
         ResuableMethods.koordinatTiklamaMethodu(590,478,3);
     }
+
+
+    @Given("Ekranda acılan popupa ya en altta tikla")
+    public void ya_en_altta_tikla(String anasayfa) throws InterruptedException {
+
+        // Uzun basma simülasyonu
+        TouchAction action = new TouchAction(driver);
+        action.longPress(PointOption.point(500, 1000))  // X ve Y koordinatlarını ihtiyacınıza göre değiştirin
+                .release()
+                .perform();
+        System.out.println("Uzun basma yapıldı.");
+    }
+
+    @Given("{int} saniye bekle")
+    public void saniye_bekle(Integer int1) throws InterruptedException {
+
+
+       ResuableMethods.wait(10);
+
+        // Uzun basma simülasyonu
+        TouchAction action = new TouchAction(driver);
+        action.longPress(PointOption.point(500, 1000))  // X ve Y koordinatlarını ihtiyacınıza göre değiştirin
+                .release()
+                .perform();
+        System.out.println("Uzun basma yapıldı.");
+        ResuableMethods.wait(5);
+
+    }
+
+    @Given("TV & Görüntü & Ses kismindan {string} a tikla")
+    public void tv_görüntü_ses_kismindan_a_tikla(String televizyon) {
+
+        ResuableMethods.scrollWithUiScrollable(televizyon);
+        ResuableMethods.wait(2);
+
+
+    }
+
+    @Given("Dörtbinbesyuztl ye tikla")
+    public void dörtbinbesyuztl_ye_tikla() throws InterruptedException {
+
+        ResuableMethods.wait(2);
+        ResuableMethods.koordinatTiklamaMethodu(127,592,5);
+    }
+
 }
